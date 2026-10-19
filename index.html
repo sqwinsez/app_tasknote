@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TaskManager — ваш личный менеджер задач">
+    <title>TaskManager — менеджер задач</title>
+    <link rel="icon" href="favicon.svg">
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 900px;
+               margin: 0 auto; padding: 20px; line-height: 1.5; color: #333; }
+        h1, h2 { color: #1f4e79; }
+        nav a { margin-right: 12px; }
+        form, table { border: 1px solid #ccc; padding: 12px; margin-bottom: 16px; }
+        table, th, td { border: 1px solid #999; border-collapse: collapse; }
+        th, td { padding: 8px 12px; }
+        th { background: #e8f1fa; }
+        label { display: block; margin-top: 8px; }
+        footer { text-align: center; color: #999; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>TaskManager</h1>
+        <p>Твой личный менеджер задач. Пока это интерфейс — хранение добавим позже.</p>
+    </header>
+
+    <nav>
+        <a href="#add">Добавить задачу</a>
+        <a href="#data">Список задач</a>
+        <a href="#help">Помощь</a>
+        <a href="https://github.com/sqwinsez" target="_blank">Мой GitHub</a>
+    </nav>
+
+    <main>
+        <section id="add">
+            <h2>Новая задача</h2>
+            <form action="#" method="get">
+                <fieldset>
+                    <legend>Данные задачи</legend>
+
+                    <label for="title">Название</label>
+                    <input type="text" id="title" name="title"
+                           placeholder="Например: сверстать интерфейс" required>
+
+                    <label for="desc">Описание</label>
+                    <textarea id="desc" name="desc" rows="3" cols="40"
+                              placeholder="Что нужно сделать?"></textarea>
+
+                    <label for="cat">Категория</label>
+                    <select id="cat" name="cat">
+                        <option value="study">Учёба</option>
+                        <option value="home">Дом</option>
+                        <option value="hobby">Хобби</option>
+                    </select>
+
+                    <label for="date">Срок</label>
+                    <input type="date" id="date" name="date">
+
+                    <label for="priority">Приоритет (1 — срочно, 5 — можно подождать)</label>
+                    <input type="number" id="priority" name="priority" min="1" max="5" value="3">
+
+                    <button type="submit">Добавить</button>
+                    <button type="reset">Очистить</button>
+                </fieldset>
+            </form>
+        </section>
+
+        <section id="data">
+            <h2>Мои задачи</h2>
+            <table>
+                <caption>Пример наполнения интерфейса</caption>
+                <thead>
+                    <tr>
+                        <th>Название</th>
+                        <th>Категория</th>
+                        <th>Срок</th>
+                        <th>Приоритет</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Сделать интерфейс</td><td>учёба</td><td>2026-10-01</td><td>1</td></tr>
+                    <tr><td>Купить продукты</td><td>дом</td><td>2026-09-25</td><td>3</td></tr>
+                    <tr><td>Прочитать главу о формах</td><td>учёба</td><td>2026-09-28</td><td>2</td></tr>
+                </tbody>
+                <tfoot>
+                    <tr><td colspan="4">Всего задач: 3 (пока это пример — реальные данные добавим позже)</td></tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section id="help">
+            <h2>Помощь</h2>
+            <figure>
+                <img src="images/logo.svg" alt="Логотип TaskManager" width="120">
+                <figcaption>Логотип приложения</figcaption>
+            </figure>
+            <label for="profile">Профиль заполнен на:</label>
+            <progress id="profile" max="100" value="70">70%</progress>
+            <details>
+                <summary>Как добавить задачу?</summary>
+                <p>Заполните форму выше и нажмите «Добавить». Пока данные никуда не сохраняются — в следующих работах добавим JavaScript.</p>
+            </details>
+            <details>
+                <summary>Что дальше?</summary>
+                <p>В следующих лабораторных оживим интерфейс и научимся сохранять задачи.</p>
+            </details>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026, Яковлев Станислав · <a href="mailto:sqwinsez@gmail.com">sqwinsez@gmail.com</a></p>
+    </footer>
+</body>
+</html>
